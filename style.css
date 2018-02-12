@@ -1,0 +1,95 @@
+body{
+    background: url("./images/background-flat.jpg");
+    background-size: 100% 100%;
+}
+
+.contenedor{
+    position: relative;
+    background: #ffffff;
+    height: 500px;
+    top:50px;
+    
+}
+img{
+    height: 100%;
+    width: 100%;
+}
+.orillaIzquierda{
+    position: absolute;
+    background: gray;
+    height: 75px;
+    width: 75px;
+    top:30%;
+    opacity: 0.40;
+}
+.interiorIzquierdo{
+    position: absolute;
+    background: gray;
+    height: 100px;
+    width: 100px;
+    top:27%;
+    left: 11%;
+    opacity: 0.60;
+}
+
+.lateralIzquierdo{
+    position: absolute;
+    background: gray;
+    height: 125px;
+    width: 125px;
+    top:24%;
+    left:24%;
+    opacity: 0.90;
+}
+
+.centro{
+    position: absolute;
+    background: gray;
+    height: 150px;
+    width: 150px;
+    top:20%;
+    left:41.5%;
+}
+
+.orillaDerecho{
+    position: absolute;
+    background: gray;
+    height: 75px;
+    width: 75px;
+    top:30%;
+    right:1.3%;
+    opacity: 0.40;
+}
+.interiorDerecho{
+    position: absolute;
+    background: gray;
+    height: 100px;
+    width: 100px;
+    top:27%;
+    right: 11%;
+    opacity: 0.60;
+}
+
+.lateralDerecho{
+    position: absolute;
+    background: gray;
+    height: 125px;
+    width: 125px;
+    top:24%;
+    right:24%;
+    opacity: 0.90;
+}
+
+.imagenPrincipal{
+    position: absolute;
+    background: gray;
+    height: 200px;
+    width: 200px;
+    top:55%;
+    left:39%;
+}
+
+
+
+
+

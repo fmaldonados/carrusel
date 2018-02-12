@@ -1,0 +1,109 @@
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="materialize/css/materialize.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="row">
+        <div class="col l2 m2 s2"></div>
+        <div class="contenedor col l8 m8 s8 z-depth-5 ">
+            <div class="orillaIzquierda z-depth-4">
+                <img id="one" class="pics" src="./images/1.jpg" onclick="selectFirst(src)"></img>
+            </div>
+
+            <div class="interiorIzquierdo z-depth-4">
+                <img id="two" class="pics" src="./images/2.jpg" onclick="selectFirst(src)"></img>
+            </div>
+
+            <div class="lateralIzquierdo z-depth-4">
+                <img id="three" class="pics" src="./images/3.jpg" onclick="selectFirst(src)"></img>
+            </div>
+
+            <div class="centro z-depth-4 ">
+                <img id="four" src="./images/4.jpg"></img>
+            </div>
+
+            <div class="lateralDerecho z-depth-4">
+                <img id="five" class="pics" src="./images/5.jpg" onclick="selectFirst(src)"></img>
+            </div>
+
+            <div class="interiorDerecho z-depth-4">
+                <img id="six" class="pics" src="./images/6.jpg" onclick="selectFirst(src)"></img>
+            </div>
+
+            <div class="orillaDerecho z-depth-4">
+                <img id="seven" class="pics" src="./images/7.jpg" onclick="selectFirst(src)"></img>
+            </div>
+
+            <div class="imagenPrincipal z-depth-4">
+                <img id="principal" src="./images/4.jpg"></img>
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+<script>
+    var images = [{ izquierdo: "./images/3.jpg", value: "./images/4.jpg", derecho: "./images/5.jpg" },
+    { izquierdo: "./images/2.jpg", value: "./images/3.jpg", derecho: "./images/4.jpg" },
+    { izquierdo: "./images/1.jpg", value: "./images/2.jpg", derecho: "./images/3.jpg" },
+    { izquierdo: "./images/15.jpg", value: "./images/1.jpg", derecho: "./images/2.jpg" },
+    { izquierdo: "./images/6.jpg", value: "./images/7.jpg", derecho: "./images/8.jpg" },
+    { izquierdo: "./images/5.jpg", value: "./images/6.jpg", derecho: "./images/7.jpg" },
+    { izquierdo: "./images/4.jpg", value: "./images/5.jpg", derecho: "./images/6.jpg" },
+    { izquierdo: "./images/7.jpg", value: "./images/8.jpg", derecho: "./images/9.jpg" },
+    { izquierdo: "./images/8.jpg", value: "./images/9.jpg", derecho: "./images/10.jpg" },
+    { izquierdo: "./images/9.jpg", value: "./images/10.jpg", derecho: "./images/11.jpg" },
+    { izquierdo: "./images/10.jpg", value: "./images/11.jpg", derecho: "./images/12.jpg" },
+    { izquierdo: "./images/11.jpg", value: "./images/12.jpg", derecho: "./images/13.jpg" },
+    { izquierdo: "./images/12.jpg", value: "./images/13.jpg", derecho: "./images/14.jpg" },
+    { izquierdo: "./images/13.jpg", value: "./images/14.jpg", derecho: "./images/15.jpg" },
+    { izquierdo: "./images/14.jpg", value: "./images/15.jpg", derecho: "./images/1.jpg" }];
+
+    function selectFirst(src) {
+        var name= src.split("/");
+        var index = "./images/" + name[name.length-1];
+        var izquierdo = getIzquierdo(index);
+        var interiorIzquierdo = getIzquierdo(izquierdo);
+        var exteriorIzquierdo = getIzquierdo(interiorIzquierdo);
+        var derecho = getDerecho(index);
+        var interiorDerecho = getDerecho(derecho);
+        var exteriorDerecho = getDerecho(interiorDerecho);
+
+        $('#one').attr('src', exteriorIzquierdo);
+        $('#two').attr('src', interiorIzquierdo);
+        $('#three').attr('src', izquierdo);
+        $('#four').attr('src', index);
+        $('#five').attr('src', derecho);
+        $('#six').attr('src', interiorDerecho);
+        $('#seven').attr('src', exteriorDerecho);
+        $('#principal').attr('src', index);
+
+    }
+    function getDerecho(derecho) {
+        var a = "";
+        for (let i = 0; i < images.length; i++) {
+            if (images[i].value == derecho) {
+                a = images[i].derecho;
+            }
+        }
+        return a;
+    }
+    function getIzquierdo(izquierdo) {
+        var a = "";
+        for (let i = 0; i < images.length; i++) {
+            if (images[i].value == izquierdo) {
+                a = images[i].izquierdo;
+            }
+        }
+        return a;
+    }
+
+</script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</html>
